@@ -1,9 +1,9 @@
 ﻿//  /*********************************************************************************
 //   *********************************************************************************
 //   *********************************************************************************
-//   * Produced by Skard Games										                  *
-//   * Facebook: https://goo.gl/5YSrKw											      *
-//   * Contact me: https://goo.gl/y5awt4								              *											
+//   * Produced by Skard Games                                                        *
+//   * Facebook: https://goo.gl/5YSrKw                                                *
+//   * Contact me: https://goo.gl/y5awt4                                              *                                         
 //   * Developed by Cavit Baturalp Gürdin: https://tr.linkedin.com/in/baturalpgurdin *
 //   *********************************************************************************
 //   *********************************************************************************
@@ -15,18 +15,18 @@ using DG.Tweening;
 
 public class CameraManager : MonoBehaviour {
 
-	public Camera main;
+    public Camera main;
 
     private float _mainMenuSize = 13.5f;
     private float _inGameSize = 11f;
 
     [HideInInspector]
-	public CameraShake shaker;
+    public CameraShake shaker;
 
-	void Awake()
-	{
-		shaker = main.gameObject.GetComponent<CameraShake> ();
-	}
+    void Awake()
+    {
+        shaker = main.gameObject.GetComponent<CameraShake> ();
+    }
 
     public void ZoomIn()
     {

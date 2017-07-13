@@ -1,9 +1,9 @@
 ﻿//  /*********************************************************************************
 //   *********************************************************************************
 //   *********************************************************************************
-//   * Produced by Skard Games										                  *
-//   * Facebook: https://goo.gl/5YSrKw											      *
-//   * Contact me: https://goo.gl/y5awt4								              *											
+//   * Produced by Skard Games                                                        *
+//   * Facebook: https://goo.gl/5YSrKw                                                *
+//   * Contact me: https://goo.gl/y5awt4                                              *                                         
 //   * Developed by Cavit Baturalp Gürdin: https://tr.linkedin.com/in/baturalpgurdin *
 //   *********************************************************************************
 //   *********************************************************************************
@@ -33,10 +33,10 @@ public class PlayerStats: ScriptableObject
 
     #if UNITY_EDITOR
     [MenuItem("Assets/Create/PlayerStatistics")]
-	public static void CreateAsset ()
-	{
-		ScriptableObjectUtility.CreateAsset<PlayerStats> ();
-	}
-	#endif
+    public static void CreateAsset ()
+    {
+        ScriptableObjectUtility.CreateAsset<PlayerStats> ();
+    }
+    #endif
 
 }

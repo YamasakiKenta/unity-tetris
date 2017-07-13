@@ -1,9 +1,9 @@
 ﻿//  /*********************************************************************************
 //   *********************************************************************************
 //   *********************************************************************************
-//   * Produced by Skard Games										                  *
-//   * Facebook: https://goo.gl/5YSrKw											      *
-//   * Contact me: https://goo.gl/y5awt4								              *											
+//   * Produced by Skard Games                                                        *
+//   * Facebook: https://goo.gl/5YSrKw                                                *
+//   * Contact me: https://goo.gl/y5awt4                                              *                                         
 //   * Developed by Cavit Baturalp Gürdin: https://tr.linkedin.com/in/baturalpgurdin *
 //   *********************************************************************************
 //   *********************************************************************************
@@ -16,7 +16,7 @@ using DG.Tweening;
 
 public class InGameUI : MonoBehaviour {
 
-	public Text score;
+    public Text score;
     public Text highScore;
     public Text scoreLabel;
     public Text highScoreLabel;  
@@ -24,7 +24,7 @@ public class InGameUI : MonoBehaviour {
     public GameObject gameOverPopUp;
 
     public void UpdateScoreUI()
-	{
+    {
         score.text = Managers.Score.currentScore.ToString();
         highScore.text = Managers.Score.highScore.ToString();
     }

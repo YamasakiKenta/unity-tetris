@@ -1,9 +1,9 @@
 ﻿//  /*********************************************************************************
 //   *********************************************************************************
 //   *********************************************************************************
-//   * Produced by Skard Games										                  *
-//   * Facebook: https://goo.gl/5YSrKw											      *
-//   * Contact me: https://goo.gl/y5awt4								              *											
+//   * Produced by Skard Games                                                        *
+//   * Facebook: https://goo.gl/5YSrKw                                                *
+//   * Contact me: https://goo.gl/y5awt4                                              *                                         
 //   * Developed by Cavit Baturalp Gürdin: https://tr.linkedin.com/in/baturalpgurdin *
 //   *********************************************************************************
 //   *********************************************************************************
@@ -16,8 +16,8 @@ using System.Collections;
 
 public class ScoreManager : MonoBehaviour {
 
-	public int currentScore=0;
-	public int highScore;
+    public int currentScore=0;
+    public int highScore;
 
     void Awake()
     {
@@ -33,9 +33,9 @@ public class ScoreManager : MonoBehaviour {
         }
     }
 
-	public void OnScore(int scoreIncreaseAmount)
-	{	
-		currentScore += scoreIncreaseAmount;
+    public void OnScore(int scoreIncreaseAmount)
+    {   
+        currentScore += scoreIncreaseAmount;
         CheckHighScore();
         Managers.UI.inGameUI.UpdateScoreUI();
         Managers.Game.stats.totalScore += scoreIncreaseAmount;

@@ -1,9 +1,9 @@
 ﻿//  /*********************************************************************************
 //   *********************************************************************************
 //   *********************************************************************************
-//   * Produced by Skard Games										                  *
-//   * Facebook: https://goo.gl/5YSrKw											      *
-//   * Contact me: https://goo.gl/y5awt4								              *											
+//   * Produced by Skard Games                                                        *
+//   * Facebook: https://goo.gl/5YSrKw                                                *
+//   * Contact me: https://goo.gl/y5awt4                                              *                                         
 //   * Developed by Cavit Baturalp Gürdin: https://tr.linkedin.com/in/baturalpgurdin *
 //   *********************************************************************************
 //   *********************************************************************************
@@ -28,25 +28,25 @@ public class MainMenu : MonoBehaviour
     }
 
     void OnEnable()
-	{
+    {
         tetrisLogoText.enabled = true;
         menuButtons.SetActive (true);   
     }
 
-	void OnDisable()
-	{
-		tetrisLogoText.enabled = false;
-		menuButtons.SetActive (false); 
+    void OnDisable()
+    {
+        tetrisLogoText.enabled = false;
+        menuButtons.SetActive (false); 
     }
 
     public void DisableMenuButtons ()
-	{
-		menuButtons.SetActive (false);
-	}
+    {
+        menuButtons.SetActive (false);
+    }
 
     public void MainMenuStartAnimation()
     {
-        menuButtons.GetComponent<RectTransform>().DOAnchorPosY(-850, 1, true);
+        // menuButtons.GetComponent<RectTransform>().DOAnchorPosY(-850, 1, true);
         tetrisLogoText.GetComponent<RectTransform>().DOAnchorPosY(600, 1, true);
     }
 
