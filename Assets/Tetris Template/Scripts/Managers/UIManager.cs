@@ -1,9 +1,9 @@
 ﻿//  /*********************************************************************************
 //   *********************************************************************************
 //   *********************************************************************************
-//   * Produced by Skard Games														  *
-//   * Facebook: https://goo.gl/5YSrKw												  *
-//   * Contact me: https://goo.gl/y5awt4											  *											
+//   * Produced by Skard Games                                                        *
+//   * Facebook: https://goo.gl/5YSrKw                                                *
+//   * Contact me: https://goo.gl/y5awt4                                              *                                         
 //   * Developed by Cavit Baturalp Gürdin: https://tr.linkedin.com/in/baturalpgurdin *
 //   *********************************************************************************
 //   *********************************************************************************
@@ -15,30 +15,30 @@ using UnityEngine.UI;
 
 public enum Menus
 {
-	MAIN,
-	INGAME,
-	GAMEOVER
+    MAIN,
+    INGAME,
+    GAMEOVER
 }
 
 public class UIManager : MonoBehaviour {
 
-	public MainMenu mainMenu;
-	public InGameUI inGameUI;
+    public MainMenu mainMenu;
+    public InGameUI inGameUI;
     public PopUp popUps;
     public GameObject activePopUp;
     public GameObject panel;
 
-	public void ActivateUI(Menus menutype)
-	{
-		if (menutype.Equals (Menus.MAIN))
-		{
+    public void ActivateUI(Menus menutype)
+    {
+        if (menutype.Equals (Menus.MAIN))
+        {
             StartCoroutine(ActivateMainMenu());          
-		}
-		else if(menutype.Equals(Menus.INGAME))
-		{
+        }
+        else if(menutype.Equals(Menus.INGAME))
+        {
             StartCoroutine(ActivateInGameUI());
-		}	
-	}
+        }   
+    }
 
     IEnumerator ActivateMainMenu()
     {

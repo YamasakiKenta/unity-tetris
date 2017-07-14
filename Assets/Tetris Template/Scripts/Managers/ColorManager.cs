@@ -11,6 +11,8 @@ public class ColorManager : MonoBehaviour {
 
     public ColorTheme activeTheme;
 
+
+
     public Color[] themePack_Pastel;
     public Color[] themePack_Gram;  
 
@@ -23,9 +25,13 @@ public class ColorManager : MonoBehaviour {
             case ColorTheme.PASTEL:
                 temp = themePack_Pastel[rand];
                 break;
+
             case ColorTheme.GRAM:
+
                 temp = themePack_Gram[rand];
+
                 break;
+
             default:
                 temp = Color.black;
                 break;
