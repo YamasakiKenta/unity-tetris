@@ -24,7 +24,6 @@ public class PlayerInputManager : MonoBehaviour
     public bool isActive;
     public InputMethod inputType;
     float interval;
-    string last_key; 
 
     void Awake()
     {
