@@ -5,7 +5,7 @@ public class ShapeMovementController : MonoBehaviour {
 
     public Transform rotationPivot;
     public float transitionInterval = 0.8f;
-    public float fastTransitionInterval ;
+    float fastTransitionInterval = 0.01f;
     private float lastFall = 0;
 
     public void ShapeUpdate()
