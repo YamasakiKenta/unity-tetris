@@ -61,7 +61,8 @@ public class PlayerInputManager : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.RightArrow)) 
         {
-            if(interval <= 0.0f){
+            if(interval <= 0.0f)
+            {
                 Managers.Game.currentShape.movementController.MoveHorizontal(Vector2.right);
                 interval = 0.1f;
             }
