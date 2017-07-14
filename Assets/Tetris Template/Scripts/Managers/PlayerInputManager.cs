@@ -1,9 +1,9 @@
 ﻿//  /*********************************************************************************
 //   *********************************************************************************
 //   *********************************************************************************
-//   * Produced by Skard Games														  *
-//   * Facebook: https://goo.gl/5YSrKw												  *
-//   * Contact me: https://goo.gl/y5awt4											  *											
+//   * Produced by Skard Games                                                        *
+//   * Facebook: https://goo.gl/5YSrKw                                                *
+//   * Contact me: https://goo.gl/y5awt4                                              *
 //   * Developed by Cavit Baturalp Gürdin: https://tr.linkedin.com/in/baturalpgurdin *
 //   *********************************************************************************
 //   *********************************************************************************
@@ -23,10 +23,12 @@ public class PlayerInputManager : MonoBehaviour
 {
     public bool isActive;
     public InputMethod inputType;
+    float interval;
+    string last_key; 
 
     void Awake()
     {
-
+        interval = 0.0f;
     }
 
     void Update()
@@ -50,17 +52,31 @@ public class PlayerInputManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.D))
             Managers.Game.currentShape.movementController.RotateClockWise(true);
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-            Managers.Game.currentShape.movementController.MoveHorizontal(Vector2.left);
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-            Managers.Game.currentShape.movementController.MoveHorizontal(Vector2.right);
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            if(interval <= 0.0f)
+            {
+                Managers.Game.currentShape.movementController.MoveHorizontal(Vector2.left);
+                interval = 0.1f;
+            }
+        }
+        else if (Input.GetKey(KeyCode.RightArrow)) 
+        {
+            if(interval <= 0.0f){
+                Managers.Game.currentShape.movementController.MoveHorizontal(Vector2.right);
+                interval = 0.1f;
+            }
+        }
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
             if (Managers.Game.currentShape != null)
             {
                 isActive = false;
                 Managers.Game.currentShape.movementController.InstantFall();
             }
+        }
+        if(interval >= 0.0f){
+            interval -= Time.deltaTime;
         }
     }
     #endregion
