@@ -48,6 +48,24 @@ public class ShapeMovementController : MonoBehaviour {
         }
     }
 
+    public void MoveDown()
+    {
+        float deltaMovement = -1.0f;
+
+        // Modify position
+        transform.position += new Vector3(0, deltaMovement);
+
+        // Check if it's valid
+        if (Managers.Grid.IsValidGridPosition(this.transform))// It's valid. Update grid.
+        {
+            Managers.Grid.UpdateGrid(this.transform);
+        }
+        else // It's not valid. revert movement operation.
+        {
+            transform.position += new Vector3(0, -deltaMovement, 0);
+        }
+    }
+
     public void FreeFall()
     {
         if (Time.time - lastFall >= transitionInterval)

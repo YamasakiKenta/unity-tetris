@@ -83,6 +83,10 @@ public class PlayerInputManager : MonoBehaviour
                 Managers.Game.currentShape.movementController.InstantFall();
             }
         }
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            Managers.Game.currentShape.movementController.MoveDown();
+        }
         if(interval >= 0.0f){
             interval -= Time.deltaTime;
         }
