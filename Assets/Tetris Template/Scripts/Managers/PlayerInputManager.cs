@@ -24,6 +24,9 @@ public class PlayerInputManager : MonoBehaviour
     public bool isActive;
     public InputMethod inputType;
     float interval;
+    float first_inteval = 0.2f;
+    float second_inteval = 0.05f;
+    int key_state = 0;
 
     void Awake()
     {
@@ -59,12 +62,22 @@ public class PlayerInputManager : MonoBehaviour
             Managers.Game.currentShape.movementController.RotateClockWise(true);
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+                Managers.Game.currentShape.movementController.MoveHorizontal(Vector2.left);
+                interval = first_inteval;
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+                Managers.Game.currentShape.movementController.MoveHorizontal(Vector2.right);
+                interval = first_inteval;
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
         {
             if(interval <= 0.0f)
             {
                 Managers.Game.currentShape.movementController.MoveHorizontal(Vector2.left);
-                interval = 0.1f;
+                interval = second_inteval;
             }
         }
         else if (Input.GetKey(KeyCode.RightArrow)) 
@@ -72,7 +85,7 @@ public class PlayerInputManager : MonoBehaviour
             if(interval <= 0.0f)
             {
                 Managers.Game.currentShape.movementController.MoveHorizontal(Vector2.right);
-                interval = 0.1f;
+                interval = second_inteval;
             }
         }
         else if (Input.GetKey(KeyCode.UpArrow))
