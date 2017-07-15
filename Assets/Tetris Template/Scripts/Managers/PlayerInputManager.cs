@@ -49,6 +49,9 @@ public class PlayerInputManager : MonoBehaviour
     #region KEYBOARD
     void KeyboardInput()
     {
+        if(Managers.Game.currentShape == null){
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.A) 
             || Input.GetKeyDown(KeyCode.X) 
             )
@@ -100,6 +103,15 @@ public class PlayerInputManager : MonoBehaviour
         {
             Managers.Game.currentShape.movementController.MoveDown();
         }
+        else if(Input.GetKeyDown(KeyCode.LeftShift)
+             || Input.GetKeyDown(KeyCode.Space)
+             )
+        {
+            isActive = false;
+            Managers.Game.currentShape.movementController.SetHold();
+            Managers.Spawner.Hold();
+        }
+
         if(interval >= 0.0f){
             interval -= Time.deltaTime;
         }

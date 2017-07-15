@@ -116,8 +116,8 @@ public class GridManager : MonoBehaviour
                 }
 
                 // Block in grid cell (and not part of same group)?
-                if(v.x<10 && v.y<20){
-                    if (gameGridcol[(int)v.x].row[(int)v.y] != null &&
+                if(v.y<20){
+                   if (gameGridcol[(int)v.x].row[(int)v.y] != null &&
                         gameGridcol[(int)v.x].row[(int)v.y].parent != obj){
                         return false;
                     }
@@ -125,6 +125,21 @@ public class GridManager : MonoBehaviour
             }
         }
         return true;
+    }
+
+    public void CleanGrid(Transform obj)
+    {
+        for (int y = 0; y < 20; y++)
+        {
+            for (int x = 0; x < 10; x++)
+            {
+                if (gameGridcol[x].row[y] != null)
+                {
+                    if (gameGridcol[x].row[y].parent == obj)
+                        gameGridcol[x].row[y] = null;
+                }
+            }
+        }
     }
 
     public void UpdateGrid(Transform obj)
