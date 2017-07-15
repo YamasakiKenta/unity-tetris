@@ -25,7 +25,7 @@ public class TetrisShape : MonoBehaviour
     void Awake()
     {
         movementController = GetComponent<ShapeMovementController>();
-        AssignRandomColor();
+        // AssignRandomColor();
     }
 
     void Start()
