@@ -116,9 +116,12 @@ public class GridManager : MonoBehaviour
                 }
 
                 // Block in grid cell (and not part of same group)?
-                if (gameGridcol[(int)v.x].row[(int)v.y] != null &&
-                    gameGridcol[(int)v.x].row[(int)v.y].parent != obj)
-                    return false;
+                if(v.x<10 && v.y<20){
+                    if (gameGridcol[(int)v.x].row[(int)v.y] != null &&
+                        gameGridcol[(int)v.x].row[(int)v.y].parent != obj){
+                        return false;
+                    }
+                }
             }
         }
         return true;

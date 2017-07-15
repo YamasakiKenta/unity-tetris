@@ -7,6 +7,7 @@ public class SpawnManager : MonoBehaviour {
 
     public int[] spanList;
     public int spanListCnt = -1;
+    public GameObject nextShape;
 
     public void ResetSpwanList(){
         int i;
@@ -26,6 +27,9 @@ public class SpawnManager : MonoBehaviour {
 
     public void Spawn()
     {
+
+        Destroy(nextShape.gameObject);
+
         // Random Shape
         if(spanListCnt==-1){
             spanList = new int[shapeTypes.Length];
@@ -46,5 +50,15 @@ public class SpawnManager : MonoBehaviour {
             ResetSpwanList();
             spanListCnt = 0;
         }
+
+        showNextSpawn();
+
+    }
+
+    public void showNextSpawn()
+    {
+        int i = spanList[spanListCnt];
+        nextShape = Instantiate(shapeTypes[i]);
+        nextShape.transform.position = new Vector2(1, 19);
     }
 }
