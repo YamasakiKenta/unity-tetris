@@ -23,6 +23,11 @@ public class MenuState : _StatesBase {
     public override void OnUpdate ()
     {
         // Debug.Log ("<color=yellow>Menu State</color> OnUpdate");
+        if(Input.GetKeyDown(KeyCode.Z)){
+            // ContinueButton.OnClickContinueButton();
+            Managers.Audio.PlayUIClick();
+            Managers.Game.SetState(typeof(GamePlayState));
+        }
     }
 
     #endregion
