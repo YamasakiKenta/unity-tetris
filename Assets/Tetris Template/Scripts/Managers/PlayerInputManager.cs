@@ -46,10 +46,18 @@ public class PlayerInputManager : MonoBehaviour
     #region KEYBOARD
     void KeyboardInput()
     {
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.A) 
+            || Input.GetKeyDown(KeyCode.X) 
+            )
+        {
             Managers.Game.currentShape.movementController.RotateClockWise(false);
-        else if (Input.GetKeyDown(KeyCode.D))
+        }
+        else if (Input.GetKeyDown(KeyCode.D)
+            || Input.GetKeyDown(KeyCode.Z)
+            )
+        {
             Managers.Game.currentShape.movementController.RotateClockWise(true);
+        }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -67,7 +75,7 @@ public class PlayerInputManager : MonoBehaviour
                 interval = 0.1f;
             }
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.UpArrow))
         {
             if (Managers.Game.currentShape != null)
             {
