@@ -23,7 +23,7 @@ public class GameOverState : _StatesBase {
 
     public override void OnUpdate ()
     {
-        Debug.Log ("<color=yellow>Game Over State</color> OnUpdate");
+        // Debug.Log ("<color=yellow>Game Over State</color> OnUpdate");
     }
     #endregion
 
